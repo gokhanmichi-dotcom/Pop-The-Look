@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const connectDatabase = require("./src/config/database");
+const userRoutes = require("./src/routes/userRoutes");
 
 const app = express();
 
@@ -9,6 +10,8 @@ connectDatabase();
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("POP THE LOOK API is running");
