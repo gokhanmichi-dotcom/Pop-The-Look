@@ -4,6 +4,7 @@ require("dotenv").config();
 const connectDatabase = require("./src/config/database");
 const userRoutes = require("./src/routes/userRoutes");
 const productRoutes = require("./src/routes/productRoutes");
+const errorHandler = require("./src/middleware/errorMiddleware");
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
