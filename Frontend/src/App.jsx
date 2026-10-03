@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
@@ -6,8 +7,7 @@ function App() {
       <Header />
 
       <main>
-        <h2>Welcome to POP THE LOOK</h2>
-        <p>Fashion Store</p>
+        <Shop />
       </main>
     </div>
   );
