@@ -1,11 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import AppRoutes from "./router/AppRoutes";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<h1>POP THE LOOK</h1>} />
-    </Routes>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
