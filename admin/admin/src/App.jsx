@@ -1,8 +1,9 @@
+import Dashboard from "./pages/Dashboard";
+
 function App() {
   return (
     <div>
-      <h1>POP THE LOOK Admin Panel</h1>
-      <p>Dashboard</p>
+      <Dashboard />
     </div>
   );
 }
