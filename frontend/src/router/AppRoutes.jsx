@@ -12,6 +12,7 @@ import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import Orders from "../pages/Orders";
 import Wishlist from "../pages/Wishlist";
+import Contact from "../pages/Contact";
 
 function AppRoutes() {
   return (
@@ -27,6 +28,7 @@ function AppRoutes() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   );
