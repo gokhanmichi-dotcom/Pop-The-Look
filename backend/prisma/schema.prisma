@@ -14,6 +14,7 @@ model User {
   password  String
   role      String   @default("CUSTOMER")
   orders Order[]
+  addresses Address[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -21,12 +22,16 @@ model User {
 model Product {
   id          Int      @id @default(autoincrement())
   name        String
-  description String
+  description String?
   price       Float
   stock       Int      @default(0)
   image       String?
   categoryId  Int
-  category    Category @relation(fields: [categoryId], references: [id])
+  category Category @relation(
+  fields: [categoryId],
+  references: [id],
+  onDelete: Cascade
+)
   orderItems OrderItem[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -74,6 +79,23 @@ model Payment {
   reference String?
 
   order     Order    @relation(fields: [orderId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model Address {
+  id        Int      @id @default(autoincrement())
+
+  userId    Int
+
+  fullName  String
+  line1     String
+  line2     String?
+  city      String
+  postcode  String
+  country   String   @default("UK")
+
+  user      User     @relation(fields: [userId], references: [id])
 
   createdAt DateTime @default(now())
 }
