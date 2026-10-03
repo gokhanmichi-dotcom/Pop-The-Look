@@ -1,11 +1,16 @@
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
+import Products from "./pages/Products";
 
 function App() {
   return (
     <div>
       <Sidebar />
-      <Dashboard />
+
+      <main>
+        <Dashboard />
+        <Products />
+      </main>
     </div>
   );
 }
